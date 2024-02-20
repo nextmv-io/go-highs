@@ -1,2 +1,3 @@
-# mip-highs
-HiGHS MIP modeling for Go
+# go-highs
+
+HiGHS MIP modeling for Go.
