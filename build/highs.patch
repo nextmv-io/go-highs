@@ -1,0 +1,57 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f4a04e55d..629b160a1 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -125,9 +125,10 @@ enable_cxx_compiler_flag_if_supported("-Wno-format-truncation")
+ enable_cxx_compiler_flag_if_supported("-pedantic")
+ endif()
+ 
+-check_cxx_compiler_flag("-mpopcnt" FLAG_MPOPCNT_SUPPORTED)
+-set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -mpopcnt")
+-
++if(NOT DEFINED ENV{HIGHS_NO_POPCNT})
++    check_cxx_compiler_flag("-mpopcnt" FLAG_MPOPCNT_SUPPORTED)
++    set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -mpopcnt")
++endif ()
+ 
+ option(DEBUGSOL "check the debug solution" OFF)
+ 
+@@ -162,6 +166,8 @@ else()
+ endif(CMAKE_Fortran_COMPILER)
+ endif()
+ 
++set(FORTRAN_FOUND OFF)
++
+ if (NOT FAST_BUILD OR CSHARP)
+ check_language("CSharp")
+ if(CMAKE_CSharp_COMPILER)
+@@ -190,7 +191,7 @@ endif()
+ # set (CMAKE_LINKER_FLAGS_DEBUG "${CMAKE_LINKER_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=address -fsanitize=undefined")
+ 
+ # if zlib is found, then we can enable reading zlib-compressed input
+-find_package(ZLIB 1.2.3)
++set(ZLIB_FOUND OFF)
+ 
+ include(CPack)
+ set(CPACK_RESOURCE_FILE_LICENSE "${HIGHS_SOURCE_DIR}/COPYING")
+@@ -202,7 +203,7 @@ set(CPACK_PACKAGE_VENDOR "University of Edinburgh")
+ find_program(GIT git)
+ if((GIT) AND (EXISTS ${HIGHS_SOURCE_DIR}/.git))
+     execute_process(
+-        COMMAND ${GIT} describe --always --dirty
++        COMMAND ${GIT} describe --always
+         WORKING_DIRECTORY ${HIGHS_SOURCE_DIR}
+         OUTPUT_VARIABLE GITHASH OUTPUT_STRIP_TRAILING_WHITESPACE)
+     string(REGEX REPLACE "^.*-g" "" GITHASH ${GITHASH})
+diff --git a/extern/filereaderlp/reader.cpp b/extern/filereaderlp/reader.cpp
+index 98c995401..17bd846fc 100644
+--- a/extern/filereaderlp/reader.cpp
++++ b/extern/filereaderlp/reader.cpp
+@@ -12,6 +12,7 @@
+ #include <vector>
+ #include <array>
+ #include <algorithm>
++#include <string.h>
+
+ #include "def.hpp"
+ 

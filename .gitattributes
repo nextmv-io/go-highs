@@ -1,0 +1,4 @@
+external/darwin-amd64/lib/libhighs.a filter=lfs diff=lfs merge=lfs -text
+external/darwin-arm64/lib/libhighs.a filter=lfs diff=lfs merge=lfs -text
+external/linux-amd64/lib/libhighs.a filter=lfs diff=lfs merge=lfs -text
+external/linux-arm64/lib/libhighs.a filter=lfs diff=lfs merge=lfs -text
