@@ -1,0 +1,153 @@
+{
+  "options": {
+    "solve": {
+      "control": {
+        "bool": [],
+        "float": [],
+        "int": [],
+        "string": []
+      },
+      "duration": 10000000000,
+      "mip": {
+        "gap": {
+          "absolute": 0.000001,
+          "relative": 0.0001
+        }
+      },
+      "verbosity": "off"
+    }
+  },
+  "solutions": [
+    {
+      "assignments": [
+        {
+          "cost": 3,
+          "effect": 25,
+          "incentive_id": "10%-discount",
+          "user": "user-1"
+        },
+        {
+          "cost": 3,
+          "effect": 5,
+          "incentive_id": "11%-discount",
+          "user": "user-2"
+        },
+        {
+          "cost": 8,
+          "effect": 36,
+          "incentive_id": "12%-discount",
+          "user": "user-3"
+        },
+        {
+          "cost": 6,
+          "effect": 13,
+          "incentive_id": "10%-discount",
+          "user": "user-4"
+        },
+        {
+          "cost": 7,
+          "effect": 25,
+          "incentive_id": "10%-discount",
+          "user": "user-5"
+        },
+        {
+          "cost": 8,
+          "effect": 27,
+          "incentive_id": "10%-discount",
+          "user": "user-6"
+        },
+        {
+          "cost": 9,
+          "effect": 11,
+          "incentive_id": "10%-discount",
+          "user": "user-7"
+        },
+        {
+          "cost": 10,
+          "effect": 20,
+          "incentive_id": "10%-discount",
+          "user": "user-8"
+        },
+        {
+          "cost": 11,
+          "effect": 14,
+          "incentive_id": "10%-discount",
+          "user": "user-9"
+        },
+        {
+          "cost": 12,
+          "effect": 25,
+          "incentive_id": "10%-discount",
+          "user": "user-10"
+        },
+        {
+          "cost": 13,
+          "effect": 37,
+          "incentive_id": "10%-discount",
+          "user": "user-11"
+        },
+        {
+          "cost": 14,
+          "effect": 25,
+          "incentive_id": "10%-discount",
+          "user": "user-12"
+        },
+        {
+          "cost": 15,
+          "effect": 29,
+          "incentive_id": "10%-discount",
+          "user": "user-13"
+        },
+        {
+          "cost": 16,
+          "effect": 20,
+          "incentive_id": "10%-discount",
+          "user": "user-14"
+        },
+        {
+          "cost": 17,
+          "effect": 25,
+          "incentive_id": "10%-discount",
+          "user": "user-15"
+        },
+        {
+          "cost": 19,
+          "effect": 13,
+          "incentive_id": "10%-discount",
+          "user": "user-17"
+        },
+        {
+          "cost": 21,
+          "effect": 33,
+          "incentive_id": "10%-discount",
+          "user": "user-19"
+        },
+        {
+          "cost": 22,
+          "effect": 32,
+          "incentive_id": "10%-discount",
+          "user": "user-20"
+        }
+      ]
+    }
+  ],
+  "statistics": {
+    "result": {
+      "custom": {
+        "constraints": 21,
+        "provider": "HiGHS",
+        "status": "optimal",
+        "variables": 58
+      },
+      "duration": 0.123,
+      "value": 415
+    },
+    "run": {
+      "duration": 0.123
+    },
+    "schema": "v1"
+  },
+  "version": {
+    "sdk": "VERSION"
+  }
+}
