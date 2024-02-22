@@ -8,6 +8,9 @@ jobs:
   # Job for running go linter
   go-lint:
     runs-on: ubuntu-latest
+    env:
+      # TODO: only required until making the repo public
+      SSH_AUTH_SOCK: /tmp/ssh_agent.sock
     steps:
       - name: git clone
         uses: actions/checkout@v4
@@ -15,6 +18,13 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: ${{ env.GO_VERSION }}
+      # TODO: only required until making the repo public
+      - name: setup SSH Keys and known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null || true
+          ssh-add - <<< "${{ secrets.NEXTMVBOT_SSH_KEY }}"
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v4
         with:
