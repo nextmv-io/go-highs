@@ -1,0 +1,53 @@
+{
+  "options": {
+    "solve": {
+      "control": {
+        "bool": [],
+        "float": [],
+        "int": [],
+        "string": []
+      },
+      "duration": 10000000000,
+      "mip": {
+        "gap": {
+          "absolute": 0.000001,
+          "relative": 0.0001
+        }
+      },
+      "verbosity": "off"
+    }
+  },
+  "solutions": [
+    {
+      "meals": [
+        {
+          "name": "A",
+          "quantity": 2
+        },
+        {
+          "name": "B",
+          "quantity": 3
+        }
+      ]
+    }
+  ],
+  "statistics": {
+    "result": {
+      "custom": {
+        "constraints": 2,
+        "provider": "highs",
+        "status": "optimal",
+        "variables": 2
+      },
+      "duration": 0.123,
+      "value": 27
+    },
+    "run": {
+      "duration": 0.123
+    },
+    "schema": "v1"
+  },
+  "version": {
+    "sdk": "VERSION"
+  }
+}
