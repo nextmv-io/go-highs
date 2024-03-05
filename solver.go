@@ -1,4 +1,4 @@
-// © 2019-present nextmv.io inc 
+// © 2019-present nextmv.io inc
 
 // Package highs implements HiGHS solver bindings.
 package highs
