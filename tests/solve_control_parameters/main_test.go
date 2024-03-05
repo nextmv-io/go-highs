@@ -1,4 +1,4 @@
-// © 2019-present nextmv.io inc 
+// © 2019-present nextmv.io inc
 
 package main_test
 
