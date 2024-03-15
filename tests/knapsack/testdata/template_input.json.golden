@@ -80,6 +80,7 @@
     "schema": "v1"
   },
   "version": {
+    "go-mip": "VERSION",
     "sdk": "VERSION"
   }
 }
