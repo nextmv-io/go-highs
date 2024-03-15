@@ -48,7 +48,7 @@
     "schema": "v1"
   },
   "version": {
-    "go-mip": "v1.5.0-dev.2",
+    "go-mip": "VERSION",
     "sdk": "VERSION"
   }
 }
