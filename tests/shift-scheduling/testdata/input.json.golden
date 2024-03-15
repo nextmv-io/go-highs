@@ -310,7 +310,7 @@
     "result": {
       "custom": {
         "constraints": 16192,
-        "provider": "highs",
+        "provider": "HiGHS",
         "status": "optimal",
         "variables": 5378
       },
@@ -323,6 +323,7 @@
     "schema": "v1"
   },
   "version": {
+    "go-mip": "v1.5.0-dev.2",
     "sdk": "VERSION"
   }
 }

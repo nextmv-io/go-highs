@@ -2,7 +2,7 @@ module github.com/nextmv-io/go-highs
 
 go 1.21
 
-require github.com/nextmv-io/go-mip v0.0.0-20240221135914-bf2265519acb
+require github.com/nextmv-io/go-mip v1.5.0-dev.2
 
 require (
 	github.com/sergi/go-diff v1.3.1 // indirect
