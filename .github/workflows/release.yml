@@ -99,5 +99,8 @@ jobs:
 
       - name: notify slack
         run: |
+          if [ ${{ inputs.IS_PRE_RELEASE }} = true ]; then
+            exit 0 # don't notify slack for pre-releases
+          fi
           export DATA="{\"text\":\"Release notification - go-highs $VERSION (see <https://github.com/nextmv-io/go-highs/releases/$VERSION|release notes>)\"}"
           curl -X POST -H 'Content-type: application/json' --data "$DATA" ${{ secrets.SLACK_WEBHOOK_URL }}
