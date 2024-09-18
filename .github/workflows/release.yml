@@ -96,3 +96,8 @@ jobs:
           --generate-notes \
           --title $VERSION $PRERELEASE_FLAG
         working-directory: ./go-highs
+
+      - name: notify slack
+        run: |
+          export DATA="{\"text\":\"Release notification - go-highs $VERSION (see <https://github.com/nextmv-io/go-highs/releases/$VERSION|release notes>)\"}"
+          curl -X POST -H 'Content-type: application/json' --data "$DATA" ${{ secrets.SLACK_WEBHOOK_URL }}
