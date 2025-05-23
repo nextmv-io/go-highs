@@ -158,7 +158,7 @@ type highsInput struct {
 
 type solutionStatus int
 
-// the values match HiGHS internal codes
+// the values match HiGHS internal codes.
 const (
 	optimal               solutionStatus = 7
 	infeasible            solutionStatus = 8
@@ -479,7 +479,7 @@ func solve(
 
 	runStatus := C.Highs_run(highsPtr)
 
-	if !(runStatus == C.kHighsStatusOk || runStatus == C.kHighsStatusWarning) {
+	if runStatus != C.kHighsStatusOk && runStatus != C.kHighsStatusWarning {
 		return &highsSolution{
 			solutionStatus: statusUnknown,
 		}, nil

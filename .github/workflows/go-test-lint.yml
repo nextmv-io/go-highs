@@ -27,9 +27,9 @@ jobs:
           ssh-add - <<< "${{ secrets.NEXTMVBOT_SSH_KEY }}"
           git config --global url."git@github.com:".insteadOf "https://github.com/"
       - name: golangci-lint
-        uses: golangci/golangci-lint-action@v4
+        uses: golangci/golangci-lint-action@v8
         with:
-          version: v1.56.2
+          version: v2.1
   # Job for running tests
   go-test:
     runs-on: ubuntu-latest
