@@ -1,14 +1,21 @@
 name: json
 on: [push]
+
+permissions: {}
+
 jobs:
   json-lint:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: git clone
-        uses: actions/checkout@v4
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          persist-credentials: false
 
       - name: set up node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 18.8
 
